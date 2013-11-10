@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1DF90C4C182F53EE0009C573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF90C4B182F53EE0009C573 /* Foundation.framework */; };
+		1DF90C4E182FA3E50009C573 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DF90C4D182FA3E50009C573 /* Localizable.strings */; };
 		93B7338717AA90E10075853F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B7338617AA90E10075853F /* CoreFoundation.framework */; };
 		93B7338D17AA90E10075853F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93B7338B17AA90E10075853F /* InfoPlist.strings */; };
 		93B7339517AA91160075853F /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B7339417AA91160075853F /* Window.xib */; };
 		93B7339D17AA91CC0075853F /* PluginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7339C17AA91CC0075853F /* PluginController.m */; };
-		93B733A017AA925A0075853F /* DemoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7339F17AA925A0075853F /* DemoWindowController.m */; };
+		93B733A017AA925A0075853F /* LyricsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7339F17AA925A0075853F /* LyricsWindowController.m */; };
 		93B733A217AA938B0075853F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B733A117AA938B0075853F /* Cocoa.framework */; };
 		93B733A817AA94FD0075853F /* PkgInfo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93B733A317AA94720075853F /* PkgInfo */; };
 /* End PBXBuildFile section */
@@ -20,7 +21,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		93B733A517AA94830075853F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = ..;
 			dstSubfolderSpec = 7;
 			files = (
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		1DF90C4B182F53EE0009C573 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DF90C4D182FA3E50009C573 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		93B7338317AA90E10075853F /* Lyrics4Itunes.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lyrics4Itunes.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B7338617AA90E10075853F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		93B7338A17AA90E10075853F /* Lyrics4Itunes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lyrics4Itunes-Info.plist"; sourceTree = "<group>"; };
@@ -40,8 +42,8 @@
 		93B7339417AA91160075853F /* Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window.xib; sourceTree = "<group>"; };
 		93B7339B17AA91CC0075853F /* PluginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginController.h; sourceTree = "<group>"; };
 		93B7339C17AA91CC0075853F /* PluginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginController.m; sourceTree = "<group>"; };
-		93B7339E17AA925A0075853F /* DemoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoWindowController.h; sourceTree = "<group>"; };
-		93B7339F17AA925A0075853F /* DemoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoWindowController.m; sourceTree = "<group>"; };
+		93B7339E17AA925A0075853F /* LyricsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricsWindowController.h; sourceTree = "<group>"; };
+		93B7339F17AA925A0075853F /* LyricsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricsWindowController.m; sourceTree = "<group>"; };
 		93B733A117AA938B0075853F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		93B733A317AA94720075853F /* PkgInfo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PkgInfo; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,9 +92,10 @@
 		93B7338817AA90E10075853F /* Lyrics4Itunes */ = {
 			isa = PBXGroup;
 			children = (
-				93B7339E17AA925A0075853F /* DemoWindowController.h */,
-				93B7339F17AA925A0075853F /* DemoWindowController.m */,
+				93B7339E17AA925A0075853F /* LyricsWindowController.h */,
+				93B7339F17AA925A0075853F /* LyricsWindowController.m */,
 				93B7338917AA90E10075853F /* Supporting Files */,
+				1DF90C4D182FA3E50009C573 /* Localizable.strings */,
 			);
 			path = Lyrics4Itunes;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B7338D17AA90E10075853F /* InfoPlist.strings in Resources */,
+				1DF90C4E182FA3E50009C573 /* Localizable.strings in Resources */,
 				93B7339517AA91160075853F /* Window.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B7339D17AA91CC0075853F /* PluginController.m in Sources */,
-				93B733A017AA925A0075853F /* DemoWindowController.m in Sources */,
+				93B733A017AA925A0075853F /* LyricsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

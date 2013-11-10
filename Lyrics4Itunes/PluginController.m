@@ -7,13 +7,13 @@
 //
 
 #import "PluginController.h"
-#import "DemoWindowController.h"
+#import "LyricsWindowController.h"
 
 @implementation PluginController
 
 @end
 
-static DemoWindowController *windowController;
+static LyricsWindowController *windowController;
 
 //__attribute__  这个关键字是GCC 编译器对标准的扩展，它用来修饰函数属性，变量属性，类型属性
 //__attribute__ ((constructor)) 所修饰的方法会在 main() 之前执行
@@ -21,19 +21,9 @@ static DemoWindowController *windowController;
 __attribute__ ((constructor))
 static void initialize(){
     NSLog(@"Start");
+    windowController = [[LyricsWindowController alloc] init];
     
-    
-
-    
-    windowController = [[DemoWindowController alloc] init];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:windowController
-                                             selector:@selector(applicationDidFinishLaunching:)
-                                                 name:NSApplicationDidFinishLaunchingNotification
-                                               object:nil];
-    
-//    [windowController.window makeKeyAndOrderFront:nil];
-    [windowController.window orderWindow:NSWindowAbove relativeTo:NSScreenSaverWindowLevel];
+    [windowController show];
     
 }
 
