@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DF90C4C182F53EE0009C573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF90C4B182F53EE0009C573 /* Foundation.framework */; };
 		93B7338717AA90E10075853F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B7338617AA90E10075853F /* CoreFoundation.framework */; };
 		93B7338D17AA90E10075853F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93B7338B17AA90E10075853F /* InfoPlist.strings */; };
 		93B7339517AA91160075853F /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B7339417AA91160075853F /* Window.xib */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1DF90C4B182F53EE0009C573 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		93B7338317AA90E10075853F /* Lyrics4Itunes.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lyrics4Itunes.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B7338617AA90E10075853F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		93B7338A17AA90E10075853F /* Lyrics4Itunes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lyrics4Itunes-Info.plist"; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF90C4C182F53EE0009C573 /* Foundation.framework in Frameworks */,
 				93B733A217AA938B0075853F /* Cocoa.framework in Frameworks */,
 				93B7338717AA90E10075853F /* CoreFoundation.framework in Frameworks */,
 			);
@@ -60,7 +63,7 @@
 		93B7337A17AA90E10075853F = {
 			isa = PBXGroup;
 			children = (
-				93B7338817AA90E10075853F /* iTunesPluginDemo */,
+				93B7338817AA90E10075853F /* Lyrics4Itunes */,
 				93B7338517AA90E10075853F /* Frameworks */,
 				93B7338417AA90E10075853F /* Products */,
 			);
@@ -77,18 +80,21 @@
 		93B7338517AA90E10075853F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DF90C4B182F53EE0009C573 /* Foundation.framework */,
 				93B733A117AA938B0075853F /* Cocoa.framework */,
 				93B7338617AA90E10075853F /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		93B7338817AA90E10075853F /* iTunesPluginDemo */ = {
+		93B7338817AA90E10075853F /* Lyrics4Itunes */ = {
 			isa = PBXGroup;
 			children = (
+				93B7339E17AA925A0075853F /* DemoWindowController.h */,
+				93B7339F17AA925A0075853F /* DemoWindowController.m */,
 				93B7338917AA90E10075853F /* Supporting Files */,
 			);
-			path = iTunesPluginDemo;
+			path = Lyrics4Itunes;
 			sourceTree = "<group>";
 		};
 		93B7338917AA90E10075853F /* Supporting Files */ = {
@@ -101,8 +107,6 @@
 				93B7339B17AA91CC0075853F /* PluginController.h */,
 				93B7339C17AA91CC0075853F /* PluginController.m */,
 				93B7339417AA91160075853F /* Window.xib */,
-				93B7339E17AA925A0075853F /* DemoWindowController.h */,
-				93B7339F17AA925A0075853F /* DemoWindowController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,7 +219,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -240,7 +244,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -250,11 +254,12 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iTunesPluginDemo/Lyrics4Itunes-Prefix.pch";
-				INFOPLIST_FILE = "iTunesPluginDemo/Lyrics4Itunes-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				GCC_PREFIX_HEADER = "Lyrics4Itunes/Lyrics4Itunes-Prefix.pch";
+				INFOPLIST_FILE = "Lyrics4Itunes/Lyrics4Itunes-Info.plist";
+				INSTALL_PATH = "~/Library/iTunes/iTunes Plug-ins";
 				PRODUCT_NAME = Lyrics4Itunes;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -264,11 +269,12 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iTunesPluginDemo/Lyrics4Itunes-Prefix.pch";
-				INFOPLIST_FILE = "iTunesPluginDemo/Lyrics4Itunes-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				GCC_PREFIX_HEADER = "Lyrics4Itunes/Lyrics4Itunes-Prefix.pch";
+				INFOPLIST_FILE = "Lyrics4Itunes/Lyrics4Itunes-Info.plist";
+				INSTALL_PATH = "~/Library/iTunes/iTunes Plug-ins";
 				PRODUCT_NAME = Lyrics4Itunes;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;

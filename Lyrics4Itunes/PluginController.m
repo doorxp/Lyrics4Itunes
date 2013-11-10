@@ -21,8 +21,20 @@ static DemoWindowController *windowController;
 __attribute__ ((constructor))
 static void initialize(){
     NSLog(@"Start");
+    
+    
+
+    
     windowController = [[DemoWindowController alloc] init];
-    [windowController.window makeKeyAndOrderFront:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:windowController
+                                             selector:@selector(applicationDidFinishLaunching:)
+                                                 name:NSApplicationDidFinishLaunchingNotification
+                                               object:nil];
+    
+//    [windowController.window makeKeyAndOrderFront:nil];
+    [windowController.window orderWindow:NSWindowAbove relativeTo:NSScreenSaverWindowLevel];
+    
 }
 
 //__attribute__ ((destructor)) 所修饰的方法会在main()执行结束之后执行
@@ -32,3 +44,4 @@ static void finalizer() {
     [windowController.window close];
     [windowController release];
 }
+
