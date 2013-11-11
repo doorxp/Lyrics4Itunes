@@ -22,7 +22,6 @@ __attribute__ ((constructor))
 static void initialize(){
     NSLog(@"Start");
     windowController = [[LyricsWindowController alloc] init];
-    
     [windowController show];
     
 }

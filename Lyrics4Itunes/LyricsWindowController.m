@@ -25,11 +25,9 @@
                                                  selector:@selector(applicationDidFinishLaunching:)
                                                      name:NSApplicationDidFinishLaunchingNotification
                                                    object:nil];
+//        [self.window setFrameOrigin:NSMakePoint(0, 0)];
+        [NSApp activateIgnoringOtherApps:YES];
         
-        [self.window setCanHide:NO];
-        [self.window setLevel:NSStatusWindowLevel];
-        [self.window setOrderedIndex:0];
-        [self.window setCollectionBehavior:NSWindowCollectionBehaviorMoveToActiveSpace];
     }
     
     return self;
@@ -47,7 +45,12 @@
 
 - (void)show
 {
+//    [self.window orderFrontRegardless];
     [self.window makeKeyAndOrderFront:self];
+    [self.window setLevel:NSStatusWindowLevel];
+    [self.window setOrderedIndex:0];
+    [self.window setIsVisible:true];
+    
 }
 
 - (void) applicationDidFinishLaunching: (NSNotification*) noti {
@@ -68,7 +71,8 @@
         [[editMenuItem submenu] addItem:newMenuItem];
         [newMenuItem release];
     }
-    [self.window setCanHide:NO];
+    
+    [self show];
 }
 
 -(void) selectionDidChange:(NSNotification *)noti {
